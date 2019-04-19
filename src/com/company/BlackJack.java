@@ -79,7 +79,7 @@ public class BlackJack {
         // while loop that will allow the user to control whether or not to add cards to the player's hand
         while ((!ans.equals("STAND")) && (!ans.equals(" "))) {
 
-            // for loop to add cards to the player's hand
+            // for loop to add cards (randomly generated numbers) to the player's hand
             for (i = 0; i < 1; i++) {
 
                 hand = (int) (Math.round((Math.random() * 10) + 1));
@@ -151,6 +151,9 @@ public class BlackJack {
         } else if (dSum == 21) {
             System.out.println("Dealer WINS! You LOSE, Pardner! Better Luck Next Time.");
             System.out.println("Thanks for playing.");
+        }else if ((dSum > 21) && (pSum > 21)){
+            System.out.println("It's a BUST!! Neither of us wins!");
+            System.out.println("Thanks for playing.");
         } else {
             if (pSum > dSum) {
                 if (pSum <= 21) {
@@ -163,6 +166,11 @@ public class BlackJack {
             } else if (pSum < dSum) {
                 if (dSum <= 21) {
                     System.out.println("Dealer WINS! You LOSE, Pardner! Better Luck Next Time.");
+                    System.out.println("Thanks for playing.");
+                }
+                else
+                {
+                    System.out.println("YOU WIN, PARDNER! GREAT JOB!");
                     System.out.println("Thanks for playing.");
                 }
             } else if (pSum == dSum) {
